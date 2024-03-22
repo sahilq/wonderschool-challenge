@@ -1,0 +1,19 @@
+schema:
+  - http://localhost:4000/graphql
+documents:
+  - "src/**/*.graphql"
+generates:
+  src/schemaTypes.ts:
+    - typescript
+  src/:
+    preset: near-operation-file
+    presetConfig:
+      extension: .generated.ts
+      baseTypesPath: schemaTypes.ts
+    plugins:
+      - typescript-operations
+      - typed-document-node
+    config:
+      withHooks: true
+      withMutationFn: true
+

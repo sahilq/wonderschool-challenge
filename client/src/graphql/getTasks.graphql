@@ -1,0 +1,9 @@
+query getTasks {
+  tasks {
+    id
+    completedAt
+    task
+    group
+    dependencyIds
+  }
+}
